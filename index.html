@@ -1,0 +1,70 @@
+---
+layout: default
+title:Ecsoya
+---
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<title>Ecsoya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+<link rel='icon' href='images/ecsoya.ico ' type=‘image/x-ico’ /> 
+</head>
+<body>
+	<section class="page-header">
+		<h1 class="project-name">Art New Age Oil Painting</h1>
+		<h2 class="project-tagline">User's Guide</h2>
+	</section>
+	<section class="main-content">
+		<h3>简介</h3>
+		<p><img src="images/ecsoya.jpg"> </p>
+		<p>Mail:    <a href="mailto:jin.liu@soyatec.com">jin.liu@soyatec.com</a></p>
+		<p>Company: Soyatec (<a href="http://www.soyatec.com">http://www.soyatec.com</a>)</p>
+		<p>Job:     Eclipse插件开发</p>
+		
+		<h3>PROJECTS</h3>
+		<ul>
+			<li>
+				<h4>Soyatec Tooling Project</h4>
+				<p>
+					<a href="https://ecsoya.github.io/org.soyatec.tooling/">Soyatec
+						Tooling Project</a>
+					是一个开源的Eclipse插件项目，它提供了一些在Eclipse插件开发中常用的工具集，如用来快速开发GEF编辑器的模型及模版，用来解析和生成XML文件的EMF工具，用于国际化RCP的工具包等等。
+				</p>
+			</li>
+			<li>
+				<h4>Eclipse Tutorials</h4>
+				<p>
+					<a href="https://ecsoya.github.io/eclipse.tutorial/">Eclipse
+						Plug-in Development Tutorials</a> 提供了公司内部的Eclipse插件培训资料及在线的学习资料。
+				</p>
+			</li>
+		</ul>
+		<h3>ARTICLES</h3>
+		<div>
+			<p>
+			<ul>
+				{% for category in site.categories %}
+				<li><a name="{{ category | first }}">{{ category | first }}</a>
+					<ul>
+						{% for posts in category %} {% for post in posts %} {% if post.url & post.title %}
+						<li><a href="{{ post.url }}">{{ post.title }}</a> {{ post.date | date_to_string }}</li> {% endif %} {% endfor %} {% endfor %}
+					</ul>
+				</li> 
+				{% endfor %}
+			</ul>
+			</p>
+			</div>
+	</section>
+	<footer class="site-footer">
+		<div align="center">
+			<span class="site-footer-credits">Oil Painting @Soyatec (http://www.soyatec.com)
+			</span>
+		</div>
+	</footer>
+</body>
+</html>
